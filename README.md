@@ -1,3 +1,11 @@
+# Table of content
+
+- [WebdriverIO and Cucumber](#webdriverio-and-cucumber)
+- [What you won't find here](#what-you-wont-find-here)
+- [What will you find?](#what-will-you-find)
+- [Requirements](#requirements)
+- [Quick start](#quick-start)
+
 # WebdriverIO and Cucumber
 This project was created for the automation practice using the WebdriverIO framework and the Cucumber tool to write tests based on BDD.
 # What you won't find here
