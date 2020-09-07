@@ -1,0 +1,46 @@
+{
+  "name": "herokuapp-ogorek",
+  "version": "1.0.0",
+  "description": "Project for automation practice based on the Herokuapp website using WDIO + Cucumber",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J-Cobbs/wdio_cucumber.git"
+  },
+  "keywords": [
+    "cucumber",
+    "wdio",
+    "WebdriverIO",
+    "BDD",
+    "test",
+    "automation"
+  ],
+  "author": "Jakub Lewandowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J-Cobbs/wdio_cucumber/issues"
+  },
+  "homepage": "https://github.com/J-Cobbs/wdio_cucumber#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.11.5",
+    "@babel/core": "^7.11.5",
+    "@babel/plugin-proposal-export-default-from": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
+    "@wdio/cucumber-framework": "^6.4.3",
+    "@wdio/dot-reporter": "^6.4.0",
+    "@wdio/local-runner": "^6.4.5",
+    "@wdio/selenium-standalone-service": "^6.4.0",
+    "@wdio/spec-reporter": "^6.4.0",
+    "@wdio/sync": "^6.4.5",
+    "selenium-standalone": "^6.19.0",
+    "webdriverio": "^6.4.5"
+  },
+  "dependencies": {
+    "@wdio/cli": "^6.4.5",
+    "wdio-cucumber-framework": "^2.2.8"
+  }
+}
