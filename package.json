@@ -1,5 +1,5 @@
 {
-  "name": "herokuapp-ogorek",
+  "name": "herokuapp",
   "version": "1.0.0",
   "description": "Project for automation practice based on the Herokuapp website using WDIO + Cucumber",
   "main": "index.js",
