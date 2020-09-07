@@ -27,7 +27,7 @@ I followed the steps from [cucumber-boilerplate](https://github.com/webdriverio/
 
 So if you will follow my "extended" version, you should be able to start writing tests with no errors after all.
 
-PS: In this page you may find other important informations which I won’t paste them here.
+*PS: In this page you may find other important informations which I won’t paste them here.*
 
 1. Download the latest stable release or clone the git repo of cucumber boilerplate
 2. Copy the files to your project into a directory like `integrationtests` (note the hidden files!)
@@ -41,6 +41,7 @@ PS: In this page you may find other important informations which I won’t paste
 `yarn install` or `brew reinstall yarn` (I did `yarn install`)
 
 5. Install Babel
+
 Once you run your first test you may facing with some babel related errors. Installation of babel should solve the problem.
 
 `npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/register` and also `npm install --save-dev @babel/plugin-proposal-export-default-from`
@@ -49,6 +50,6 @@ Once you run your first test you may facing with some babel related errors. Inst
 
 7. Copy and paste folder `src` and `babel.config.js` file to **your project folder**
 
-8. Write and run your first test and check if it works 
+8. Write and run your first **single** feature (test) and check if it works 
 
 `npx wdio wdio.conf.js --spec <path to file>`
