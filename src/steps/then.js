@@ -29,11 +29,13 @@ import isVisible from '../support/check/isDisplayed';
 import waitFor from '../support/action/waitFor';
 import waitForVisible from '../support/action/waitForDisplayed';
 import checkIfElementExists from '../support/lib/checkIfElementExists';
+import Checkboxes from '../pageObjects/checkboxes.page'
 
 const { Then } = require('cucumber');
 
-Then('checkboxes are ticked', () => {
-    const elem = $('#checkboxes > input[type=checkbox]:nth-child(1)')
-    expect(elem).toBeSelected()
+Then('first checkbox is marked', () => {
+    const firstcheckbox = Checkboxes.firstBox
+    expect(firstcheckbox).toBeSelected()
+    browser.pause(2000)
   });
 

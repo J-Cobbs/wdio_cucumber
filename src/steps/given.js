@@ -22,5 +22,5 @@ import openWebsite from '../support/action/openWebsite';
 import setWindowSize from '../support/action/setWindowSize';
 
 Given('I am on Checkboxes page', () => {
-    browser.url('http://the-internet.herokuapp.com/checkboxes')
+    browser.url('./checkboxes')
   });
