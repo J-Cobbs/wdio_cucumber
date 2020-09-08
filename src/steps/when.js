@@ -14,11 +14,13 @@ import selectOptionByIndex from '../support/action/selectOptionByIndex';
 import setCookie from '../support/action/setCookie';
 import setInputField from '../support/action/setInputField';
 import setPromptText from '../support/action/setPromptText';
+import Checkboxes from '../pageObjects/checkboxes.page'
 
 const { When } = require('cucumber');
 
-When('I select checkboxes', () => {
-    const elem = $('#checkboxes > input[type=checkbox]:nth-child(1)')
-    elem.click()
+When('I select first checkbox', () => {
+    Checkboxes.firstBox.click()
+    //page selects second checkbox by default so clicking on second one is necessary
+    Checkboxes.secBox.click() 
     }
 );

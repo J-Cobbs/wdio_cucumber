@@ -4,5 +4,5 @@ Feature: checkboxes homepage
 
 Scenario: Tick checkboxes on the page
     Given I am on Checkboxes page
-    When I select checkboxes
-    Then checkboxes are ticked
+    When I select first checkbox
+    Then first checkbox is marked
