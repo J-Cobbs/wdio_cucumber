@@ -39,3 +39,13 @@ Then('first checkbox is marked', () => {
     browser.pause(2000)
   });
 
+  Then('pop-up alert appears', () => {
+    browser.execute('window.alert()');
+    console.log(browser.isAlertOpen());
+    browser.pause(2000);
+    }    
+  );
+
+  Then('I can dismiss alert by pressing OK', () => {
+      browser.acceptAlert()
+  });

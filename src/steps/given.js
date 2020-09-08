@@ -1,5 +1,4 @@
 import { Given } from 'cucumber';
-
 import checkContainsAnyText from '../support/check/checkContainsAnyText';
 import checkIsEmpty from '../support/check/checkIsEmpty';
 import checkContainsText from '../support/check/checkContainsText';
@@ -23,4 +22,8 @@ import setWindowSize from '../support/action/setWindowSize';
 
 Given('I am on Checkboxes page', () => {
     browser.url('./checkboxes')
+  });
+
+  Given('I am on context menu page', () => {
+    browser.url('./context_menu')
   });
