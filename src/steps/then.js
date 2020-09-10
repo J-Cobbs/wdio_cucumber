@@ -30,6 +30,7 @@ import waitFor from '../support/action/waitFor';
 import waitForVisible from '../support/action/waitForDisplayed';
 import checkIfElementExists from '../support/lib/checkIfElementExists';
 import Checkboxes from '../pageObjects/checkboxes.page'
+import bOauth from '../pageObjects/basic_oauth.page'
 
 const { Then } = require('cucumber');
 
@@ -49,3 +50,9 @@ Then('first checkbox is marked', () => {
   Then('I can dismiss alert by pressing OK', () => {
       browser.acceptAlert()
   });
+
+  Then('I am successfully logged in to digest auth page', () => {
+    const info = bOauth.text
+    expect(info).toBeDisplayed('Congratulations! You must have the proper credentials.')
+    console.log(info)
+});

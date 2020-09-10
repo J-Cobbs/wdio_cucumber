@@ -24,6 +24,11 @@ Given('I am on Checkboxes page', () => {
     browser.url('./checkboxes')
   });
 
-  Given('I am on context menu page', () => {
+Given('I am on context menu page', () => {
     browser.url('./context_menu')
   });
+
+Given('I am on digest auth page', () => {
+    browser.url('./digest_auth')
+    browser.pause(2000);
+  })

@@ -34,3 +34,9 @@ When('I right click on hot-spot', () => {
     browser.pause(2000);
     }
 );
+
+When('credentials are filled out', () => {
+    browser.url('http://admin:admin@the-internet.herokuapp.com/digest_auth');
+    browser.pause(2000);
+    }
+);
