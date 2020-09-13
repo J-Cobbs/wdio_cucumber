@@ -32,3 +32,8 @@ Given('I am on digest auth page', () => {
     browser.url('./digest_auth')
     browser.pause(2000);
   })
+
+Given('I am on drag and drop page', () => {
+    browser.url('./drag_and_drop')
+    browser.pause(2000);
+  })

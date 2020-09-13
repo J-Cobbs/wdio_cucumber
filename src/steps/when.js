@@ -16,6 +16,7 @@ import setInputField from '../support/action/setInputField';
 import setPromptText from '../support/action/setPromptText';
 import Checkboxes from '../pageObjects/checkboxes.page'
 import Contextmenu from '../pageObjects/contextMenu.page'
+import Dragdrop from '../pageObjects/dragNdrop.page'
 
 const { When } = require('cucumber');
 
@@ -38,5 +39,21 @@ When('I right click on hot-spot', () => {
 When('credentials are filled out', () => {
     browser.url('http://admin:admin@the-internet.herokuapp.com/digest_auth');
     browser.pause(2000);
+    }
+);
+
+When('I drag box A to Box B', () => {
+    const elementDragged = Dragdrop.positionA
+    const elementDropped = Dragdrop.targetA
+    elementDragged.dragAndDrop(elementDropped)
+    //browser.pause(2000);
+    }
+);
+
+When('I drag box B to Box A', () => {
+    const elementDragged = Dragdrop.positionB
+    const elementDropped = Dragdrop.targetB
+    elementDragged.dragAndDrop(elementDropped)
+    //browser.pause(2000);
     }
 );

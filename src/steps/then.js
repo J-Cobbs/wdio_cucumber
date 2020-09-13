@@ -31,6 +31,7 @@ import waitForVisible from '../support/action/waitForDisplayed';
 import checkIfElementExists from '../support/lib/checkIfElementExists';
 import Checkboxes from '../pageObjects/checkboxes.page'
 import bOauth from '../pageObjects/basic_oauth.page'
+import Dragdrop from '../pageObjects/dragNdrop.page'
 
 const { Then } = require('cucumber');
 
@@ -55,4 +56,14 @@ Then('first checkbox is marked', () => {
     const info = bOauth.text
     expect(info).toBeDisplayed('Congratulations! You must have the proper credentials.')
     console.log(info)
+});
+
+Then("box A changed it's position", () => {
+    const headA = Dragdrop.headerA
+    expect(headA).toHaveText('A')
+});
+
+Then("box B changed it's position", () => {
+    const headB = Dragdrop.headerB
+    expect(headB).toHaveText('B')
 });
