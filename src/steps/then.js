@@ -32,6 +32,8 @@ import checkIfElementExists from '../support/lib/checkIfElementExists';
 import Checkboxes from '../pageObjects/checkboxes.page'
 import bOauth from '../pageObjects/basic_oauth.page'
 import Dragdrop from '../pageObjects/dragNdrop.page'
+import Dropdown from '../pageObjects/dropdown.page'
+import Dynamic from '../pageObjects/dynamic_content.page'
 
 const { Then } = require('cucumber');
 
@@ -60,10 +62,31 @@ Then('first checkbox is marked', () => {
 
 Then("box A changed it's position", () => {
     const headA = Dragdrop.headerA
-    expect(headA).toHaveText('A')
+    expect(Dragdrop.headerA).toHaveText('A')
+    //const log = expect(headA).toHaveText('A')
+    //console.log(JSON.parse(JSON.stringify(headA)))
+    console.log('Box A header is:' + headA)
 });
 
 Then("box B changed it's position", () => {
     const headB = Dragdrop.headerB
-    expect(headB).toHaveText('B')
+    expect(Dragdrop.headerB).toHaveText('B')
+    console.log('Box A header is:' + headB)
+});
+Then("I can select option 2", () => {
+    Dropdown.secOpt.click()
+    const option = Dropdown.secOpt.getText();   
+    expect(Dropdown.secOpt).toBeDisplayed()
+    console.log('Chosen option is ' + option);
+    browser.pause(2000);
+});
+Then("Content has changed", () => {
+    const rowOne = Dynamic.rowOne.getText();
+    console.log('First row is ' + rowOne);
+    const rowTwo = Dynamic.rowTwo.getText();
+    console.log('Second row is ' + rowTwo);
+    const rowThree = Dynamic.rowThree.getText();
+    console.log('Third row is ' + rowThree);
+    //didn't have idea how to make better test
+    //so it may be run twice and compared what's logged for now
 });

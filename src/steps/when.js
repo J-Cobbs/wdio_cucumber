@@ -17,6 +17,8 @@ import setPromptText from '../support/action/setPromptText';
 import Checkboxes from '../pageObjects/checkboxes.page'
 import Contextmenu from '../pageObjects/contextMenu.page'
 import Dragdrop from '../pageObjects/dragNdrop.page'
+import Dropdown from '../pageObjects/dropdown.page'
+import Dynamic from '../pageObjects/dynamic_content.page'
 
 const { When } = require('cucumber');
 
@@ -55,5 +57,20 @@ When('I drag box B to Box A', () => {
     const elementDropped = Dragdrop.targetB
     elementDragged.dragAndDrop(elementDropped)
     //browser.pause(2000);
+    }
+);
+
+When('I click on dropdown list', () => {
+    Dropdown.dropOpt.click()
+    browser.pause(2000);
+    }
+);
+When('the list is expanded', () => {
+    Dropdown.secOpt.waitForDisplayed({ timeout: 2000 });
+     
+    }
+);
+When('I refresh page', () => {
+    browser.refresh()     
     }
 );

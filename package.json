@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "@wdio/cli": "^6.4.5",
+    "istanbul-lib-report": "^3.0.0",
     "wdio-cucumber-framework": "^2.2.8"
   }
 }

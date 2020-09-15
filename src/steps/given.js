@@ -19,6 +19,7 @@ import isEnabled from '../support/check/isEnabled';
 import isDisplayed from '../support/check/isDisplayed';
 import openWebsite from '../support/action/openWebsite';
 import setWindowSize from '../support/action/setWindowSize';
+import { ContentWriter } from 'istanbul-lib-report';
 
 Given('I am on Checkboxes page', () => {
     browser.url('./checkboxes')
@@ -35,5 +36,14 @@ Given('I am on digest auth page', () => {
 
 Given('I am on drag and drop page', () => {
     browser.url('./drag_and_drop')
+    browser.pause(2000);
+  })
+
+  Given('I am on dropdown page', () => {
+    browser.url('./dropdown')
+    browser.pause(2000);
+  })
+  Given('I am on dynamic content page', () => {
+    browser.url('./dynamic_content')
     browser.pause(2000);
   })
