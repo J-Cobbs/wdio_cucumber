@@ -47,3 +47,7 @@ Given('I am on drag and drop page', () => {
     browser.url('./dynamic_content')
     browser.pause(2000);
   })
+  Given('I am on dynamic control page', () => {
+    browser.url('./dynamic_controls')
+    browser.pause(2000);
+  })

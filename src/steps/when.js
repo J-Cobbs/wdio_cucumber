@@ -19,6 +19,7 @@ import Contextmenu from '../pageObjects/contextMenu.page'
 import Dragdrop from '../pageObjects/dragNdrop.page'
 import Dropdown from '../pageObjects/dropdown.page'
 import Dynamic from '../pageObjects/dynamic_content.page'
+import DynamiCon from '../pageObjects/dynamic_controls.page'
 
 const { When } = require('cucumber');
 
@@ -72,5 +73,28 @@ When('the list is expanded', () => {
 );
 When('I refresh page', () => {
     browser.refresh()     
+    }
+);
+When('I select a checkbox', () => {
+    DynamiCon.checkbox.click()
+    browser.pause(2000);
+    DynamiCon.checkbox.isSelected();
+    }
+);
+
+When('I press remove button', () => {
+    DynamiCon.addRemoveBtn.click()
+    browser.pause(2000);
+    //DynamiCon.checkbox.waitForDisplayed({ timeout: 8000 })
+    }
+);
+When('checkbox is not visible', () => {
+    expect(DynamiCon.checkbox).toBeVisible(false)
+    browser.pause(2000);
+    }
+);
+When('I press add button', () => {
+    DynamiCon.addRemoveBtn.click()
+    browser.pause(2000);
     }
 );

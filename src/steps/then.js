@@ -34,6 +34,7 @@ import bOauth from '../pageObjects/basic_oauth.page'
 import Dragdrop from '../pageObjects/dragNdrop.page'
 import Dropdown from '../pageObjects/dropdown.page'
 import Dynamic from '../pageObjects/dynamic_content.page'
+import DynamiCon from '../pageObjects/dynamic_controls.page'
 
 const { Then } = require('cucumber');
 
@@ -80,6 +81,7 @@ Then("I can select option 2", () => {
     console.log('Chosen option is ' + option);
     browser.pause(2000);
 });
+
 Then("Content has changed", () => {
     const rowOne = Dynamic.rowOne.getText();
     console.log('First row is ' + rowOne);
@@ -89,4 +91,26 @@ Then("Content has changed", () => {
     console.log('Third row is ' + rowThree);
     //didn't have idea how to make better test
     //so it may be run twice and compared what's logged for now
+});
+
+Then("checkbox is gone", () => {
+    const checkbox = DynamiCon.checkbox
+    checkbox.waitForDisplayed({ timeout: 5000 })
+    expect(DynamiCon.checkbox).toBeVisible(false)
+    browser.pause(5000);
+});
+
+Then("checkbox is visible", () => {
+    expect(DynamiCon.checkbox).toBeVisible()
+    browser.pause(2000);
+});
+
+
+Then("I have appropriate message displayed", () => {
+    const message = DynamiCon.message
+    if (message === "It's gone!") {
+        console.log("It's gone!")
+    } else {
+        console.log("It's back!")
+    }
 });
