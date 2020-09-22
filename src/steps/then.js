@@ -106,11 +106,25 @@ Then("checkbox is visible", () => {
 });
 
 
-Then("I have appropriate message displayed", () => {
-    const message = DynamiCon.message
-    if (message === "It's gone!") {
+Then("I have message displayed", () => {
+    const messageOne = DynamiCon.message
+    if (messageOne === "It's gone!") {
         console.log("It's gone!")
     } else {
         console.log("It's back!")
     }
+});
+Then("input field is enabled", () => {
+    const field = DynamiCon.inputField
+    field.waitForDisplayed({ timeout: 5000 })
+    expect(DynamiCon.inputField).toBeEnabled()
+    browser.pause(2000);
+});
+Then("I can type any text", () => {
+    DynamiCon.inputField.addValue("I'm trying do my best")
+    browser.pause(2000);
+});
+Then("Input field is disabled again", () => {
+    expect(DynamiCon.inputField).toBeDisabled()
+    browser.pause(2000);
 });

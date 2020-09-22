@@ -96,5 +96,13 @@ When('checkbox is not visible', () => {
 When('I press add button', () => {
     DynamiCon.addRemoveBtn.click()
     browser.pause(2000);
-    }
-);
+});
+When('Input field is disabled', () => {
+    expect(DynamiCon.inputField).toBeDisabled()
+    browser.pause(2000);
+});
+When('I press a button', () => {
+    DynamiCon.enableBtn.click()
+    DynamiCon.enableBtn.waitForDisplayed({ timeout: 5000 })
+    browser.pause(2000); 
+});
