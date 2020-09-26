@@ -35,6 +35,7 @@ import Dragdrop from '../pageObjects/dragNdrop.page'
 import Dropdown from '../pageObjects/dropdown.page'
 import Dynamic from '../pageObjects/dynamic_content.page'
 import DynamiCon from '../pageObjects/dynamic_controls.page'
+import Modal from '../pageObjects/overlayModal.page'
 
 const { Then } = require('cucumber');
 
@@ -127,4 +128,24 @@ Then("I can type any text", () => {
 Then("Input field is disabled again", () => {
     expect(DynamiCon.inputField).toBeDisabled()
     browser.pause(2000);
+});
+Then("modal window appears", () => {
+    const modal = Modal.modalWindow
+    modal.waitForDisplayed({ timeout: 3000 });
+    browser.isAlertOpen()
+    console.log("===========>" + browser.isAlertOpen())
+    browser.pause(2000);
+});
+Then("I can close that window", () => {
+    const close = Modal.closeWindow
+    Modal.modalWindow.waitForDisplayed({ timeout: 3000 });
+    browser.isAlertOpen()
+    close.click()
+    browser.refresh()
+});
+Then("modal doesn't appear", () => {
+    browser.refresh()
+    browser.refresh()
+    browser.isAlertOpen()
+    console.log("===========>" + browser.isAlertOpen())
 });

@@ -20,6 +20,7 @@ import Dragdrop from '../pageObjects/dragNdrop.page'
 import Dropdown from '../pageObjects/dropdown.page'
 import Dynamic from '../pageObjects/dynamic_content.page'
 import DynamiCon from '../pageObjects/dynamic_controls.page'
+import Modal from '../pageObjects/overlayModal.page'
 
 const { When } = require('cucumber');
 
@@ -72,7 +73,8 @@ When('the list is expanded', () => {
     }
 );
 When('I refresh page', () => {
-    browser.refresh()     
+    browser.refresh()
+    browser.pause(2000);     
     }
 );
 When('I select a checkbox', () => {
@@ -104,5 +106,9 @@ When('Input field is disabled', () => {
 When('I press a button', () => {
     DynamiCon.enableBtn.click()
     DynamiCon.enableBtn.waitForDisplayed({ timeout: 5000 })
+    browser.pause(2000); 
+});
+When('I select entry_ad page', () => {
+    Modal.entryAdUrl.click()
     browser.pause(2000); 
 });

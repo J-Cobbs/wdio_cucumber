@@ -21,6 +21,9 @@ import openWebsite from '../support/action/openWebsite';
 import setWindowSize from '../support/action/setWindowSize';
 import { ContentWriter } from 'istanbul-lib-report';
 
+Given('I am on herokuapp page', () => {
+  browser.url('./')
+});
 Given('I am on Checkboxes page', () => {
     browser.url('./checkboxes')
   });
@@ -49,5 +52,9 @@ Given('I am on drag and drop page', () => {
   })
   Given('I am on dynamic control page', () => {
     browser.url('./dynamic_controls')
+    browser.pause(2000);
+  })
+  Given('I am on entry_ad page', () => {
+    browser.url('./entry_ad')
     browser.pause(2000);
   })
