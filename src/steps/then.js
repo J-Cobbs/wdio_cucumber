@@ -36,6 +36,7 @@ import Dropdown from '../pageObjects/dropdown.page'
 import Dynamic from '../pageObjects/dynamic_content.page'
 import DynamiCon from '../pageObjects/dynamic_controls.page'
 import Modal from '../pageObjects/overlayModal.page'
+import OutModal from '../pageObjects/outbounce_modal.page'
 
 const { Then } = require('cucumber');
 
@@ -148,4 +149,11 @@ Then("modal doesn't appear", () => {
     browser.refresh()
     browser.isAlertOpen()
     console.log("===========>" + browser.isAlertOpen())
+});
+Then("outbounce modal window appears", () => {
+    //const modal = OutModal.modalWindow
+    OutModal.modalWindow.waitForDisplayed({ timeout: 3000 });
+    browser.isAlertOpen()
+    console.log("===========>" + browser.isAlertOpen())
+    browser.pause(2000);
 });

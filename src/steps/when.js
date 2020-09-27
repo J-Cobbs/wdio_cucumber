@@ -21,6 +21,7 @@ import Dropdown from '../pageObjects/dropdown.page'
 import Dynamic from '../pageObjects/dynamic_content.page'
 import DynamiCon from '../pageObjects/dynamic_controls.page'
 import Modal from '../pageObjects/overlayModal.page'
+import OutModal from '../pageObjects/outbounce_modal.page'
 
 const { When } = require('cucumber');
 
@@ -110,5 +111,9 @@ When('I press a button', () => {
 });
 When('I select entry_ad page', () => {
     Modal.entryAdUrl.click()
+    browser.pause(2000); 
+});
+When('I hover a mouse out of the page', () => {
+    OutModal.pageBody.moveTo(-10, -10)
     browser.pause(2000); 
 });

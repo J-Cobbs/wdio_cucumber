@@ -58,3 +58,7 @@ Given('I am on drag and drop page', () => {
     browser.url('./entry_ad')
     browser.pause(2000);
   })
+  Given('I am on exit_intent page', () => {
+    browser.url('./exit_intent')
+    browser.pause(2000);
+  })
