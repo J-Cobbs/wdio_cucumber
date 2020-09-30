@@ -37,6 +37,7 @@ import Dynamic from '../pageObjects/dynamic_content.page'
 import DynamiCon from '../pageObjects/dynamic_controls.page'
 import Modal from '../pageObjects/overlayModal.page'
 import OutModal from '../pageObjects/outbounce_modal.page'
+import Upload from '../pageObjects/upload.page'
 
 const { Then } = require('cucumber');
 
@@ -155,5 +156,10 @@ Then("outbounce modal window appears", () => {
     OutModal.modalWindow.waitForDisplayed({ timeout: 3000 });
     browser.isAlertOpen()
     console.log("===========>" + browser.isAlertOpen())
+    browser.pause(2000);
+});
+Then("file gonna be uploaded", () => {
+    Upload.fileUploaded.waitForDisplayed({ timeout: 5000 })
+    expect(Upload.fileUploaded).toBeDisplayed('File Uploaded!')
     browser.pause(2000);
 });

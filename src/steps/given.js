@@ -62,3 +62,7 @@ Given('I am on drag and drop page', () => {
     browser.url('./exit_intent')
     browser.pause(2000);
   })
+  Given('I am on upload page', () => {
+    browser.url('./upload')
+    browser.pause(2000);
+  })

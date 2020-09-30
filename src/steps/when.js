@@ -22,8 +22,10 @@ import Dynamic from '../pageObjects/dynamic_content.page'
 import DynamiCon from '../pageObjects/dynamic_controls.page'
 import Modal from '../pageObjects/overlayModal.page'
 import OutModal from '../pageObjects/outbounce_modal.page'
+import Upload from '../pageObjects/upload.page'
 
 const { When } = require('cucumber');
+const path = require('path')
 
 When('I select first checkbox', () => {
     Checkboxes.firstBox.click()
@@ -116,4 +118,11 @@ When('I select entry_ad page', () => {
 When('I hover a mouse out of the page', () => {
     OutModal.pageBody.moveTo(-10, -10)
     browser.pause(2000); 
+});
+When('I pick example file from path', () => {
+    const filePath = path.join('/Users/jakublewandowski/Desktop/example_file.txt');
+    const remoteFilePath = browser.uploadFile(filePath);
+    Upload.fileUpload.setValue(remoteFilePath);
+    Upload.fileSubmit.click()
+    
 });
