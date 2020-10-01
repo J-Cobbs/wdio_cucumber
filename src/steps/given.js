@@ -66,3 +66,7 @@ Given('I am on drag and drop page', () => {
     browser.url('./upload')
     browser.pause(2000);
   })
+  Given('I am on forgot password page', () => {
+    browser.url('./forgot_password')
+    browser.pause(2000);
+  })

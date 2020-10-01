@@ -23,6 +23,7 @@ import DynamiCon from '../pageObjects/dynamic_controls.page'
 import Modal from '../pageObjects/overlayModal.page'
 import OutModal from '../pageObjects/outbounce_modal.page'
 import Upload from '../pageObjects/upload.page'
+import Retrieve from '../pageObjects/forgotPassword.page'
 
 const { When } = require('cucumber');
 const path = require('path')
@@ -123,6 +124,12 @@ When('I pick example file from path', () => {
     const filePath = path.join('/Users/jakublewandowski/Desktop/example_file.txt');
     const remoteFilePath = browser.uploadFile(filePath);
     Upload.fileUpload.setValue(remoteFilePath);
-    Upload.fileSubmit.click()
-    
+    Upload.fileSubmit.click()    
+});
+When('I fill in valid password', () => {
+    Retrieve.inputField.setValue('test@test.com')
+});
+When('I submit request by pressing cta', () => {
+    Retrieve.formCTA.click()
+    browser.pause(2000);
 });

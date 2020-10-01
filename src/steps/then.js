@@ -38,6 +38,7 @@ import DynamiCon from '../pageObjects/dynamic_controls.page'
 import Modal from '../pageObjects/overlayModal.page'
 import OutModal from '../pageObjects/outbounce_modal.page'
 import Upload from '../pageObjects/upload.page'
+import Retrieve from '../pageObjects/forgotPassword.page'
 
 const { Then } = require('cucumber');
 
@@ -161,5 +162,12 @@ Then("outbounce modal window appears", () => {
 Then("file gonna be uploaded", () => {
     Upload.fileUploaded.waitForDisplayed({ timeout: 5000 })
     expect(Upload.fileUploaded).toBeDisplayed('File Uploaded!')
+    browser.pause(2000);
+});
+Then("email is sent and I have proper message", () => {
+    Retrieve.formMessage.waitForDisplayed({ timeout: 3000 })
+    expect(Retrieve.formMessage).toHaveText("Your e-mail's been sent!")
+    expect(browser).toHaveUrl('http://the-internet.herokuapp.com/email_sent')
+    console.log("here ===========>" + Retrieve.formMessage.getText())
     browser.pause(2000);
 });
