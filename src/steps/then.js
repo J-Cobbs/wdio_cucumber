@@ -39,6 +39,7 @@ import Modal from '../pageObjects/overlayModal.page'
 import OutModal from '../pageObjects/outbounce_modal.page'
 import Upload from '../pageObjects/upload.page'
 import Retrieve from '../pageObjects/forgotPassword.page'
+import Login from '../pageObjects/login.page'
 
 const { Then } = require('cucumber');
 
@@ -171,3 +172,18 @@ Then("email is sent and I have proper message", () => {
     console.log("here ===========>" + Retrieve.formMessage.getText())
     browser.pause(2000);
 });
+Then("banner appears on top of the page", () => {
+    Login.flashError.waitForDisplayed({ timeout: 3000 })
+    if (Login.flashError === "You logged into a secure area!") {
+        expect(Login.flashError).toBeDisplayed("You logged into a secure area!")
+        //console.log(Login.flashError)
+    } else {
+        expect(Login.flashError).toBeDisplayed("Your username is invalid!")
+        //console.log(Login.flashError)
+    }
+});
+Then("I can log out from the page", () => {
+    Login.logOutBtn.click()
+    browser.pause(2000);
+});
+

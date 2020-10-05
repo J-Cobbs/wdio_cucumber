@@ -70,3 +70,7 @@ Given('I am on drag and drop page', () => {
     browser.url('./forgot_password')
     browser.pause(2000);
   })
+  Given('I am on login page', () => {
+    browser.url('./login')
+    browser.pause(2000);
+  })

@@ -24,6 +24,7 @@ import Modal from '../pageObjects/overlayModal.page'
 import OutModal from '../pageObjects/outbounce_modal.page'
 import Upload from '../pageObjects/upload.page'
 import Retrieve from '../pageObjects/forgotPassword.page'
+import Login from '../pageObjects/login.page'
 
 const { When } = require('cucumber');
 const path = require('path')
@@ -131,5 +132,23 @@ When('I fill in valid password', () => {
 });
 When('I submit request by pressing cta', () => {
     Retrieve.formCTA.click()
+    browser.pause(2000);
+});
+When('I fill in invalid username', () => {
+    Login.emailInput.setValue('test@test.com')
+    browser.pause(2000);
+});
+When('I fill any credentials in password field', () => {
+    Login.passwordInput.setValue('p455w0rD')
+    Login.logInBtn.click()
+    browser.pause(2000);
+});
+When('I fill in valid username', () => {
+    Login.emailInput.setValue('tomsmith')
+    browser.pause(2000);
+});
+When('I fill valid credentials in password field', () => {
+    Login.passwordInput.setValue('SuperSecretPassword!')
+    Login.logInBtn.click()
     browser.pause(2000);
 });
