@@ -20,6 +20,7 @@ import isDisplayed from '../support/check/isDisplayed';
 import openWebsite from '../support/action/openWebsite';
 import setWindowSize from '../support/action/setWindowSize';
 import { ContentWriter } from 'istanbul-lib-report';
+import Frame from '../pageObjects/iFrame.page'
 
 Given('I am on herokuapp page', () => {
   browser.url('./')
@@ -72,5 +73,10 @@ Given('I am on drag and drop page', () => {
   })
   Given('I am on login page', () => {
     browser.url('./login')
+    browser.pause(2000);
+  })
+  Given('I am on iframe page', () => {
+    browser.url('./frames')
+    Frame.iFrameBtn.click()
     browser.pause(2000);
   })

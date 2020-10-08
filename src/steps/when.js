@@ -25,6 +25,7 @@ import OutModal from '../pageObjects/outbounce_modal.page'
 import Upload from '../pageObjects/upload.page'
 import Retrieve from '../pageObjects/forgotPassword.page'
 import Login from '../pageObjects/login.page'
+import Frame from '../pageObjects/iFrame.page'
 
 const { When } = require('cucumber');
 const path = require('path')
@@ -151,4 +152,9 @@ When('I fill valid credentials in password field', () => {
     Login.passwordInput.setValue('SuperSecretPassword!')
     Login.logInBtn.click()
     browser.pause(2000);
+});
+When('I switch to iFrame', () => {
+    Frame.title.waitForDisplayed(3000)
+    browser.switchToFrame(Frame.iFrame)
+
 });

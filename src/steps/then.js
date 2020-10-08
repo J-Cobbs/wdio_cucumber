@@ -40,6 +40,8 @@ import OutModal from '../pageObjects/outbounce_modal.page'
 import Upload from '../pageObjects/upload.page'
 import Retrieve from '../pageObjects/forgotPassword.page'
 import Login from '../pageObjects/login.page'
+import Frame from '../pageObjects/iFrame.page'
+
 
 const { Then } = require('cucumber');
 
@@ -186,4 +188,7 @@ Then("I can log out from the page", () => {
     Login.logOutBtn.click()
     browser.pause(2000);
 });
-
+Then("I'm able to write some text", () => {
+    Frame.textWindow.setValue("An iFrame containing the TinyMCE WYSIWYG Editor")
+    browser.pause(2000);
+});
