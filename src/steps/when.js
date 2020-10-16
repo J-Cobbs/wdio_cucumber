@@ -26,6 +26,7 @@ import Upload from '../pageObjects/upload.page'
 import Retrieve from '../pageObjects/forgotPassword.page'
 import Login from '../pageObjects/login.page'
 import Frame from '../pageObjects/iFrame.page'
+import Slider from '../pageObjects/slider.page'
 
 const { When } = require('cucumber');
 const path = require('path')
@@ -157,4 +158,11 @@ When('I switch to iFrame', () => {
     Frame.title.waitForDisplayed(3000)
     browser.switchToFrame(Frame.iFrame)
 
+});
+When('I drag slider to particular position', () => {
+    Slider.slider.getLocation();
+    console.log("----> location above <----")
+    Slider.slider.moveTo(115, 163)
+    Slider.slider.click({x: 30})
+    browser.pause(2000);
 });

@@ -80,3 +80,7 @@ Given('I am on drag and drop page', () => {
     Frame.iFrameBtn.click()
     browser.pause(2000);
   })
+  Given('I am on horizontal slider page', () => {
+    browser.url('./horizontal_slider')
+    browser.pause(2000);
+  })
