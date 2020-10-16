@@ -159,7 +159,7 @@ When('I switch to iFrame', () => {
     browser.switchToFrame(Frame.iFrame)
 
 });
-When('I drag slider to particular position', () => {
+When('I click slider on particular position', () => {
     Slider.slider.getLocation();
     console.log("----> location above <----")
     Slider.slider.moveTo(115, 163)

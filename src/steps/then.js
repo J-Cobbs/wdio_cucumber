@@ -193,7 +193,7 @@ Then("I'm able to write some text", () => {
     Frame.textWindow.setValue("An iFrame containing the TinyMCE WYSIWYG Editor")
     browser.pause(2000);
 });
-Then("I'll receive number 4 on indicator", () => {
+Then("I'll receive expected number on a indicator", () => {
     expect(Slider.number).toHaveText("4")
     browser.pause(2000);
 });
