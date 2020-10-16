@@ -4,5 +4,5 @@ Feature: Horizontal Slider
 
 Scenario: Dragging slider to indicate number 4
     Given I am on horizontal slider page
-    When I drag slider to particular position
-    Then I'll receive number 4 on indicator
+    When I click slider on particular position
+    Then I'll receive expected number on a indicator

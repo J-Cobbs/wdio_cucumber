@@ -84,3 +84,7 @@ Given('I am on drag and drop page', () => {
     browser.url('./horizontal_slider')
     browser.pause(2000);
   })
+  Given('I am on hover page', () => {
+    browser.url('./hovers')
+    browser.pause(2000);
+  })

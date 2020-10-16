@@ -27,6 +27,7 @@ import Retrieve from '../pageObjects/forgotPassword.page'
 import Login from '../pageObjects/login.page'
 import Frame from '../pageObjects/iFrame.page'
 import Slider from '../pageObjects/slider.page'
+import Hover from '../pageObjects/hover.page'
 
 const { When } = require('cucumber');
 const path = require('path')
@@ -166,3 +167,10 @@ When('I click slider on particular position', () => {
     Slider.slider.click({x: 30})
     browser.pause(2000);
 });
+When('I hover on particular picture', () => {
+    //Hover.user1.getLocation();
+    //Hover.user2.getLocation();
+    //Hover.user3.getLocation();
+    //console.log("----> location above <----")
+    Hover.user1.moveTo( 115, 132 )
+})

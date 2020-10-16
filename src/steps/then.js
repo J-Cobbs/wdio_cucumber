@@ -42,7 +42,7 @@ import Retrieve from '../pageObjects/forgotPassword.page'
 import Login from '../pageObjects/login.page'
 import Frame from '../pageObjects/iFrame.page'
 import Slider from '../pageObjects/slider.page'
-
+import Hover from '../pageObjects/hover.page'
 
 const { Then } = require('cucumber');
 
@@ -195,5 +195,11 @@ Then("I'm able to write some text", () => {
 });
 Then("I'll receive expected number on a indicator", () => {
     expect(Slider.number).toHaveText("4")
+    browser.pause(2000);
+});
+Then("additional information will appear below the picture", () => {
+    expect(Hover.profile1).toBeClickable()
+    //expect(Hover.profile2).toBeClickable()
+    // expect(Hover.profile3).toBeClickable()
     browser.pause(2000);
 });
