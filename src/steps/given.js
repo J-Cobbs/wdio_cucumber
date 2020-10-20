@@ -88,3 +88,7 @@ Given('I am on drag and drop page', () => {
     browser.url('./hovers')
     browser.pause(2000);
   })
+  Given('I am on menu page', () => {
+    browser.url('./jqueryui/menu')
+    browser.pause(2000);
+  })

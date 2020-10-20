@@ -43,6 +43,7 @@ import Login from '../pageObjects/login.page'
 import Frame from '../pageObjects/iFrame.page'
 import Slider from '../pageObjects/slider.page'
 import Hover from '../pageObjects/hover.page'
+import JQuery from '../pageObjects/JQueryUI.page'
 
 const { Then } = require('cucumber');
 
@@ -202,4 +203,16 @@ Then("additional information will appear below the picture", () => {
     //expect(Hover.profile2).toBeClickable()
     // expect(Hover.profile3).toBeClickable()
     browser.pause(2000);
+});
+Then("I can hover on Back to JQuery UI option and click it", () => {
+    JQuery.backToBtn.waitForClickable({ timeout: 3000 });
+    JQuery.backToBtn.getLocation();
+    //Hover.user2.getLocation();
+    //Hover.user3.getLocation();
+    console.log("----> location above <----")
+    JQuery.backToBtn.moveTo( 0, 0 )
+    JQuery.backToBtn.click()
+});
+Then("I'm redirected to specyfic page", () => {
+    expect(browser).toHaveUrl('http://the-internet.herokuapp.com/jqueryui')
 });

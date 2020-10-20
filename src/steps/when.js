@@ -28,6 +28,7 @@ import Login from '../pageObjects/login.page'
 import Frame from '../pageObjects/iFrame.page'
 import Slider from '../pageObjects/slider.page'
 import Hover from '../pageObjects/hover.page'
+import JQuery from '../pageObjects/JQueryUI.page'
 
 const { When } = require('cucumber');
 const path = require('path')
@@ -173,4 +174,10 @@ When('I hover on particular picture', () => {
     //Hover.user3.getLocation();
     //console.log("----> location above <----")
     Hover.user1.moveTo( 115, 132 )
+})
+When('I hover on enabled menu', () => {
+    //JQuery.enable.getLocation();
+    //console.log("----> location above <----")
+    JQuery.enable.moveTo( 118, 296 )
+    browser.pause(2000);
 })
