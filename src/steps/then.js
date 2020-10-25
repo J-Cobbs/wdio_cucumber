@@ -44,6 +44,7 @@ import Frame from '../pageObjects/iFrame.page'
 import Slider from '../pageObjects/slider.page'
 import Hover from '../pageObjects/hover.page'
 import JQuery from '../pageObjects/JQueryUI.page'
+import JSAlerts from '../pageObjects/javaScriptAlerts.page'
 
 const { Then } = require('cucumber');
 
@@ -215,4 +216,25 @@ Then("I can hover on Back to JQuery UI option and click it", () => {
 });
 Then("I'm redirected to specyfic page", () => {
     expect(browser).toHaveUrl('http://the-internet.herokuapp.com/jqueryui')
+});
+Then("pop up appears", () => {
+    browser.getAlertText()
+    console.log('HERE ----> ' + browser.getAlertText())
+    browser.pause(2000)
+});
+Then("I should be able to accept alert", () => {
+    browser.acceptAlert()
+    expect(JSAlerts.resultsText).toHaveText('You successfuly clicked an alert')
+    browser.pause(2000)
+});
+Then("I should be able to dismiss alert", () => {
+    browser.dismissAlert()
+    expect(JSAlerts.resultsText).toHaveText('You clicked: Cancel')
+    browser.pause(2000)
+});
+Then("I should be able to type some text in", () => {
+    browser.sendAlertText('This is some test message')
+    browser.acceptAlert()
+    expect(JSAlerts.resultsText).toHaveText('You entered: This is some test message')
+    browser.pause(2000)
 });

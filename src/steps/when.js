@@ -29,6 +29,8 @@ import Frame from '../pageObjects/iFrame.page'
 import Slider from '../pageObjects/slider.page'
 import Hover from '../pageObjects/hover.page'
 import JQuery from '../pageObjects/JQueryUI.page'
+import JSAlerts from '../pageObjects/javaScriptAlerts.page'
+import { AssertionError } from 'assert';
 
 const { When } = require('cucumber');
 const path = require('path')
@@ -180,4 +182,13 @@ When('I hover on enabled menu', () => {
     //console.log("----> location above <----")
     JQuery.enable.moveTo( 118, 296 )
     browser.pause(2000);
+})
+When('I click on first button', () => {
+    JSAlerts.firtsBtn.click()
+})
+When('I click on second button', () => {
+    JSAlerts.secBtn.click()
+})
+When('I click on third button', () => {
+    JSAlerts.thirdBtn.click()
 })

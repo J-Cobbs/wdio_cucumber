@@ -92,3 +92,7 @@ Given('I am on drag and drop page', () => {
     browser.url('./jqueryui/menu')
     browser.pause(2000);
   })
+  Given('I am on JS alerts page', () => {
+    browser.url('./javascript_alerts')
+    browser.pause(2000);
+  })
