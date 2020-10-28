@@ -30,6 +30,7 @@ import Slider from '../pageObjects/slider.page'
 import Hover from '../pageObjects/hover.page'
 import JQuery from '../pageObjects/JQueryUI.page'
 import JSAlerts from '../pageObjects/javaScriptAlerts.page'
+import Interaction from '../pageObjects/keyPress.page'
 import { AssertionError } from 'assert';
 
 const { When } = require('cucumber');
@@ -191,4 +192,9 @@ When('I click on second button', () => {
 })
 When('I click on third button', () => {
     JSAlerts.thirdBtn.click()
+})
+When('I set some characters', () => {
+    Interaction.field.click()
+    Interaction.field.waitForEnabled({ timeout: 3000 })
+    Interaction.field.setValue(['a', 'w', 'e', 's', 'o', 'm', 'e', 'Tab'])
 })

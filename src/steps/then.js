@@ -45,6 +45,7 @@ import Slider from '../pageObjects/slider.page'
 import Hover from '../pageObjects/hover.page'
 import JQuery from '../pageObjects/JQueryUI.page'
 import JSAlerts from '../pageObjects/javaScriptAlerts.page'
+import Interaction from '../pageObjects/keyPress.page'
 
 const { Then } = require('cucumber');
 
@@ -236,5 +237,11 @@ Then("I should be able to type some text in", () => {
     browser.sendAlertText('This is some test message')
     browser.acceptAlert()
     expect(JSAlerts.resultsText).toHaveText('You entered: This is some test message')
+    browser.pause(2000)
+});
+Then("message displays last key entered", () => {
+    Interaction.result.waitForDisplayed(3000)
+    let isDisplayed = Interaction.result.isDisplayed();
+    console.log("Here ---->" + isDisplayed);
     browser.pause(2000)
 });

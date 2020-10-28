@@ -96,3 +96,7 @@ Given('I am on drag and drop page', () => {
     browser.url('./javascript_alerts')
     browser.pause(2000);
   })
+  Given('I am on key presses page', () => {
+    browser.url('./key_presses')
+    browser.pause(2000);
+  })
