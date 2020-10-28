@@ -32,6 +32,7 @@ import JQuery from '../pageObjects/JQueryUI.page'
 import JSAlerts from '../pageObjects/javaScriptAlerts.page'
 import Interaction from '../pageObjects/keyPress.page'
 import { AssertionError } from 'assert';
+import Tab from '../pageObjects/newTab.page'
 
 const { When } = require('cucumber');
 const path = require('path')
@@ -197,4 +198,8 @@ When('I set some characters', () => {
     Interaction.field.click()
     Interaction.field.waitForEnabled({ timeout: 3000 })
     Interaction.field.setValue(['a', 'w', 'e', 's', 'o', 'm', 'e', 'Tab'])
+})
+When('I click on link CTA', () => {
+    Tab.linkBtn.click()
+    browser.pause(3000);
 })

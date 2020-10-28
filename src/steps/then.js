@@ -46,6 +46,7 @@ import Hover from '../pageObjects/hover.page'
 import JQuery from '../pageObjects/JQueryUI.page'
 import JSAlerts from '../pageObjects/javaScriptAlerts.page'
 import Interaction from '../pageObjects/keyPress.page'
+import Tab from '../pageObjects/newTab.page'
 
 const { Then } = require('cucumber');
 
@@ -244,4 +245,12 @@ Then("message displays last key entered", () => {
     let isDisplayed = Interaction.result.isDisplayed();
     console.log("Here ---->" + isDisplayed);
     browser.pause(2000)
+});
+Then("New tab is open", () => {
+    browser.switchWindow('/windows/new')
+    browser.getWindowHandles()
+    console.log("Here ---> " + browser.getTitle())
+    browser.pause(1000)
+    browser.closeWindow()
+    browser.pause(1000)
 });

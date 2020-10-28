@@ -21,6 +21,7 @@ import openWebsite from '../support/action/openWebsite';
 import setWindowSize from '../support/action/setWindowSize';
 import { ContentWriter } from 'istanbul-lib-report';
 import Frame from '../pageObjects/iFrame.page'
+import Tab from '../pageObjects/newTab.page'
 
 Given('I am on herokuapp page', () => {
   browser.url('./')
@@ -98,5 +99,9 @@ Given('I am on drag and drop page', () => {
   })
   Given('I am on key presses page', () => {
     browser.url('./key_presses')
+    browser.pause(2000);
+  })
+  Given('I am on windows page', () => {
+    browser.url('./windows')
     browser.pause(2000);
   })
