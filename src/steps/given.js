@@ -105,3 +105,7 @@ Given('I am on drag and drop page', () => {
     browser.url('./windows')
     browser.pause(2000);
   })
+  Given('I am on notification message page', () => {
+    browser.url('./notification_message_rendered')
+    browser.pause(2000);
+  })

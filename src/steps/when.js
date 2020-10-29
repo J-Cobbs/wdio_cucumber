@@ -33,6 +33,7 @@ import JSAlerts from '../pageObjects/javaScriptAlerts.page'
 import Interaction from '../pageObjects/keyPress.page'
 import { AssertionError } from 'assert';
 import Tab from '../pageObjects/newTab.page'
+import Notification from '../pageObjects/notification.page'
 
 const { When } = require('cucumber');
 const path = require('path')
@@ -202,4 +203,8 @@ When('I set some characters', () => {
 When('I click on link CTA', () => {
     Tab.linkBtn.click()
     browser.pause(3000);
+})
+When('I click on Click Here CTA', () => {
+    Notification.hereBtn.click()
+    browser.pause(1000);
 })

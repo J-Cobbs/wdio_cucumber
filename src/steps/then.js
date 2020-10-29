@@ -47,6 +47,7 @@ import JQuery from '../pageObjects/JQueryUI.page'
 import JSAlerts from '../pageObjects/javaScriptAlerts.page'
 import Interaction from '../pageObjects/keyPress.page'
 import Tab from '../pageObjects/newTab.page'
+import Notification from '../pageObjects/notification.page'
 
 const { Then } = require('cucumber');
 
@@ -253,4 +254,12 @@ Then("New tab is open", () => {
     browser.pause(1000)
     browser.closeWindow()
     browser.pause(1000)
+});
+Then("Notification message will display", () => {
+    Notification.message.waitForDisplayed(3000)
+    // let message = Notification.message.isDisplayed();
+    // console.log("Here ---->" + message)
+    let message = Notification.message.getText()
+    console.log("Here ----> " + message)
+    browser.pause(2000)
 });
