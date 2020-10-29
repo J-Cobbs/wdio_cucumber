@@ -34,6 +34,7 @@ import Interaction from '../pageObjects/keyPress.page'
 import { AssertionError } from 'assert';
 import Tab from '../pageObjects/newTab.page'
 import Notification from '../pageObjects/notification.page'
+import Table from '../pageObjects/dataTables.page'
 
 const { When } = require('cucumber');
 const path = require('path')
@@ -206,5 +207,13 @@ When('I click on link CTA', () => {
 })
 When('I click on Click Here CTA', () => {
     Notification.hereBtn.click()
+    browser.pause(1000);
+})
+When('I click on First Name column name', () => {
+    Table.firstNameCol.click()
+    browser.pause(1000);
+})
+When('I click on email column name', () => {
+    Table.emailNameCol.click()
     browser.pause(1000);
 })

@@ -48,6 +48,8 @@ import JSAlerts from '../pageObjects/javaScriptAlerts.page'
 import Interaction from '../pageObjects/keyPress.page'
 import Tab from '../pageObjects/newTab.page'
 import Notification from '../pageObjects/notification.page'
+import Table from '../pageObjects/dataTables.page'
+
 
 const { Then } = require('cucumber');
 
@@ -261,5 +263,15 @@ Then("Notification message will display", () => {
     // console.log("Here ---->" + message)
     let message = Notification.message.getText()
     console.log("Here ----> " + message)
+    browser.pause(2000)
+});
+Then("table is filtered by name", () => {
+    let name = Table.firstNameRow.getText()
+    console.log("Here ----> " + name)
+    browser.pause(2000)
+});
+Then("table is filtered by email", () => {
+    let name = Table.emailNameRow.getText()
+    console.log("Here ----> " + name)
     browser.pause(2000)
 });
