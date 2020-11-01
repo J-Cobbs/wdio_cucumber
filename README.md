@@ -53,3 +53,6 @@ Once you run your first test you may facing with some babel related errors. Inst
 8. Write and run your first **single** feature (test) and check if it works 
 
 `npx wdio wdio.conf.js --spec <path to file>`
+
+# Small update
+Update from 1.11.2020... Most likely, that's all for now folks. In here you can find around 20, not perfect written tests based on herokuapp page. Hopefully I will back soon with similar tests, (maybe with Cucumber) but written in Python because this is the next language I want to develop in, in the future.
