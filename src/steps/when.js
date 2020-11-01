@@ -35,6 +35,7 @@ import { AssertionError } from 'assert';
 import Tab from '../pageObjects/newTab.page'
 import Notification from '../pageObjects/notification.page'
 import Table from '../pageObjects/dataTables.page'
+import addDelete from '../pageObjects/addDelete.page'
 
 const { When } = require('cucumber');
 const path = require('path')
@@ -216,4 +217,13 @@ When('I click on First Name column name', () => {
 When('I click on email column name', () => {
     Table.emailNameCol.click()
     browser.pause(1000);
+})
+When('I click on add element button', () => {
+    addDelete.addBtn.click()
+})
+When('I click on remove button', () => {
+    addDelete.addBtn.click()
+    addDelete.removeBtn.waitForDisplayed({ timeout: 2000 })
+    addDelete.removeBtn.click()
+    browser.pause(1000)
 })

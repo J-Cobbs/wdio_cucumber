@@ -49,7 +49,7 @@ import Interaction from '../pageObjects/keyPress.page'
 import Tab from '../pageObjects/newTab.page'
 import Notification from '../pageObjects/notification.page'
 import Table from '../pageObjects/dataTables.page'
-
+import addDelete from '../pageObjects/addDelete.page'
 
 const { Then } = require('cucumber');
 
@@ -275,3 +275,13 @@ Then("table is filtered by email", () => {
     console.log("Here ----> " + name)
     browser.pause(2000)
 });
+Then("remove buttons appears below", () => {
+    addDelete.removeBtn.isDisplayed()
+    console.log("Here ---> ")
+    browser.pause(2000)
+})
+Then("remove buttons disappears", () => {
+    addDelete.removeBtn.waitForDisplayed({ reverse: true })
+    console.log("Here ---> ")
+    browser.pause(2000)
+})

@@ -22,6 +22,7 @@ import setWindowSize from '../support/action/setWindowSize';
 import { ContentWriter } from 'istanbul-lib-report';
 import Frame from '../pageObjects/iFrame.page'
 import Tab from '../pageObjects/newTab.page'
+import addDelete from '../pageObjects/addDelete.page'
 
 Given('I am on herokuapp page', () => {
   browser.url('./')
@@ -111,5 +112,13 @@ Given('I am on drag and drop page', () => {
   })
   Given('I am on tables page', () => {
     browser.url('./tables')
+    browser.pause(2000);
+  })
+  Given('I am on add and remove page', () => {
+    browser.url('./')
+    //I had to do this by clicking on url
+    //because going through url I received
+    //Page not found
+    addDelete.browserBtn.click()
     browser.pause(2000);
   })
